@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<h2>Websockets!!</h2>
+<script type="text/javascript">
+window.onload= function(){
+	var ws = new WebSocket('ws://localhost:8181','echo-protocol');
+	ws.onopen = function(){
+		console.log('web socket connection opened on echo protocol');
+	}; //end ws.onopen
+
+	ws.onmessage = function(event) {
+		console.log(event);
+		ws.send(JSON.stringify({status: 'ok', path: 'route_a'}));
+	}; //end ws.onmessage
+
+
+	var wsupdate = new WebSocket('ws://localhost:8181','update-protocol');
+	wsupdate.onopen = function(){
+		console.log('web socket connection opened on update protocol');
+		wsupdate.send('update');
+	}; //wsupdate.open
+
+	} //end onload
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+	<h2>Web socket client using HTML</h2>
+	<script type="text/javascript">
+		window.onload = function(){
+			var ws = new WebSocket('ws://localhost:8181', 'echo-protocol');
+			ws.onopen = function(){
+				console.log('opened');
+			}
+
+			ws.onmessage = function(event){
+				console.log(event);
+				ws.send(JSON.stringify({
+					status: 'okay',
+
+				}));
+			}
+
+		}
+
+	</script>
+</body>
+</html>

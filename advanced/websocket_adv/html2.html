@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<h2>Websockets!!</h2>
+<script type="text/javascript">
+	var ws = new WebSocket('ws://localhost:8181','echo-protocol');
+	ws.onopen = function(){
+		console.log('web socket connection opened');
+	}
+
+	ws.onmessage = function(event) {
+		console.log(event);
+		ws.send(JSON.stringify({status: 'ok', path: 'route_a'}));
+		ws.send(JSON.stringify({status: 'ok', path: 'route_b', action: 'update'}));
+	}
+	</script>
+</body>
+</html>

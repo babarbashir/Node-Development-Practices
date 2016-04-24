@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<title>Whiteboard</title>
+<!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript" src = "drawing.js"></script>
+
+
+</head>
+<body>
+<div id="wrapper">
+<div class="menu">
+<ul>
+<li><a id = "clear">Clear</a></li>
+	
+<li>
+	<a id="draw">Draw</a>
+	<ul id="colors">
+		<li style="background-color: white">
+			<a>White</a>
+		</li>
+
+		<li style="background-color: red">
+			<a>Red</a>
+		</li>
+		<li style="background-color: orange">
+			<a>Orange</a>
+		</li>
+
+		<li style="background-color: yellow">
+			<a>Yellow</a>
+		</li>
+		<li style="background-color: green">
+			<a>Green</a>
+		</li>
+
+		<li style="background-color: blue">
+			<a>Blue</a>
+		</li>
+		<!--
+		<li style="background-color: indigo">
+			<a>Indigo</a>
+		</li>
+
+		<li style="background-color: violet">
+			<a>Violet</a>
+		</li>
+		-->
+
+		<li style="background-color: black">
+			<a>Black</a>
+		</li>
+
+	</ul>
+</li>
+	<label for="sizer">Line Size:</label>
+	<input name="sizer" id="sizer" type="number" min="5" max="100" step="5" />
+
+</ul>
+</div>
+<canvas id="canvas"></canvas>
+<canvas id="remotecanvas"></canvas>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  p.a_class Welcome to #{title}
+  #an_id
+  label A range slider:
+   input(type='range')
+  #ckbx
+   label A checkbox
+    input(type='checkbox', checked)
+   ul
+   li.odd: a(href='#', title="One") One
+   li.odd: a(href='#', title="Two") Two
+   li.odd: a(href='#', title="Three") Three
+   case flag
+    when 0: #zero there is no flag
+    when 1: #one there is a single flag
+    default: #other something else
+   - if(items.length)
+    ul
+     - items.forEach(function(item){
+       li= item
+     - })
+
